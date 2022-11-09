@@ -27,13 +27,29 @@ const prod = import.meta.env.PROD;
     { (prod && customFBEvent) && (<script is:inline define:vars={{customFBEvent}}>fbq('track', customFBEvent);</script>)}
     { prod && (<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-431724580"></script><script is:inline>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "AW-431724580");</script>)}
   </head>
+
   <body class="bg-neutral-900 text-slate-300 min-h-[100vh]">
-    <slot />
+    <main class="flex justify-center items-center min-h-[100vh]">
+      <div class="background absolute inset-0 opacity-20"></div>
+  
+      <div class="max-w-2xl p-8 grid gap-8 relative">
+        <slot />
+      </div>
+    </main>
+
     <style>
       body {
         font-family: "Poppins", sans-serif;
       }
+
+      .background {
+        background-image: url(/assets/background.jpg);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     </style>
+
     {(prod && customFBEvent) && (<noscript><img height="1" width="1" style="display: none" src={`https://www.facebook.com/tr?id=387749326306583&ev=${customFBEvent}&noscript=1`} alt="" /></noscript>)}
   </body>
 </html>

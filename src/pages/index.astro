@@ -3,35 +3,21 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Sessão de Diagnóstico" customFBEvent="ViewContent">
-  <main class="flex justify-center items-center min-h-[100vh]">
-    <div class="background absolute inset-0 opacity-20"></div>
+  <h1 class="text-3xl md:text-4xl uppercase font-black">
+    Você já é um programador contratado mas
+    <span class="text-red-800"> ainda não sente confiança</span>
+    para desenvolver os seus projetos?
+  </h1>
 
-    <div class="max-w-2xl p-8 grid gap-8 relative">
-      <h1 class="text-3xl md:text-4xl uppercase font-black">
-        Você já é um programador contratado mas
-        <span class="text-red-800"> ainda não sente confiança</span>
-        para desenvolver os seus projetos?
-      </h1>
+  <p class="text-lg md:text-2xl">
+    Agende um diagnóstico gratuito comigo e descubra como ser mais confiante e
+    mais reconhecido pelo seu trabalho
+  </p>
 
-      <p class="text-lg md:text-2xl">
-        Agende um diagnóstico gratuito comigo e descubra como ser mais confiante
-        e mais reconhecido pelo seu trabalho
-      </p>
-
-      <a
-        class="inline-block mx-auto rounded-full bg-green-600 shadow text-neutral-900 px-8 py-4 uppercase text-xl text-center font-semibold transition-all hover:scale-105 hover:shadow-lg hover:bg-green-800 focus:scale-105 focus:shadow-lg focus:bg-green-800 focus:outline-green-800 focus:outline-offset-4 focus:outline-2 active:scale-95 active:shadow-none active:bg-green-600 active:outline-none active:text-white"
-        href={import.meta.env.VITE_WHATSAPP_LINK}
-      >
-        Clique aqui para agendar!
-      </a>
-    </div>
-  </main>
+  <a
+    class="inline-block mx-auto rounded-full bg-green-600 shadow text-neutral-900 px-8 py-4 uppercase text-xl text-center font-semibold transition-all hover:scale-105 hover:shadow-lg hover:bg-green-800 focus:scale-105 focus:shadow-lg focus:bg-green-800 focus:outline-green-800 focus:outline-offset-4 focus:outline-2 active:scale-95 active:shadow-none active:bg-green-600 active:outline-none active:text-white"
+    href="/schedule"
+  >
+    Clique aqui para agendar!
+  </a>
 </Layout>
-<style>
-  .background {
-    background-image: url(/assets/background.jpg);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-</style>

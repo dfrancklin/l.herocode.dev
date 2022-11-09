@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Sessão de Diagnóstico" customFBEvent="Lead">
+  <h1 class="text-3xl md:text-4xl uppercase font-black">
+    Estamos encontrando alguém para falar com você!
+  </h1>
+
+  <p class="text-lg md:text-2xl">
+    Estamos encontrando alguém para falar com você e vamos te redirecionar em
+    instantes. Se você não for encaminhado em 1 segundos, por favor, clique no
+    botão abaixo!
+  </p>
+
+  <a
+    class="inline-block mx-auto rounded-full bg-green-600 shadow text-neutral-900 px-8 py-4 uppercase text-xl text-center font-semibold transition-all hover:scale-105 hover:shadow-lg hover:bg-green-800 focus:scale-105 focus:shadow-lg focus:bg-green-800 focus:outline-green-800 focus:outline-offset-4 focus:outline-2 active:scale-95 active:shadow-none active:bg-green-600 active:outline-none active:text-white"
+    href={import.meta.env.VITE_WHATSAPP_LINK}
+  >
+    Falar com atendente!
+  </a>
+</Layout>
+
+<script
+  is:inline
+  defer
+  define:vars={{ attendant: import.meta.env.VITE_WHATSAPP_LINK }}
+>
+  (function () {
+    if (document.readyState === "complete") {
+      onLoad();
+      return;
+    }
+
+    window.addEventListener("load", onLoad);
+
+    function onLoad() {
+      setTimeout(() => (window.location = attendant), 1500);
+    }
+  })();
+</script>
